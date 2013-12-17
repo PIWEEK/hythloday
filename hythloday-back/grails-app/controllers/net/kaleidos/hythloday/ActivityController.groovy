@@ -26,7 +26,7 @@ class ActivityController {
             
             return
         }
-
+        
         def activity = activityService.create(cmd.getParams())
 
         render activity as JSON

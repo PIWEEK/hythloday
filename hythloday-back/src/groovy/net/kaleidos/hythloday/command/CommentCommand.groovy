@@ -4,20 +4,25 @@ package net.kaleidos.hythloday
 class CommentCommand {
     Long activityId
     String text
-    User user
+    Long userId
 
     static constraints = {
         activityId nullable:false, blank:false
         text nullable:false, blank:false
-        user nullable:true, blank:true
+        userId nullable:false, blank:false
     }
 
     def getActivity() {
         return Activity.get(activityId)
     }
+    
+    def getUser() {
+        return User.get(userId)
+    }
 
     def getParams() {
         return [text: text,
-                activity: getActivity()]
+                activity: getActivity(),
+                user: getUser()]
     }
 }

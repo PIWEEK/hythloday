@@ -8,8 +8,7 @@ class Comment {
 
     static constraints = {
         text nullable:false, blank:false
-
-        user nullable:true, blank:true
+        user nullable:false, blank:false
     }
 
     static mapping = {

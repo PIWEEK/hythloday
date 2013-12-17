@@ -86,6 +86,7 @@ grails.hibernate.cache.queries = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+        grails.serverURL = "http://localhost:8080"        
     }
     production {
         grails.logging.jul.usebridge = false
@@ -113,3 +114,7 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+grails.config.locations = [ "classpath:hythloday-config.properties" ]
+
+grails.app.context = "/"
