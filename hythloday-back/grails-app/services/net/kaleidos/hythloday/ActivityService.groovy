@@ -3,7 +3,7 @@ package net.kaleidos.hythloday
 class ActivityService {
     def create(Map params) {
         def activity = new Activity()
-        
+
         activity.title = params.title
         activity.description = params?.description
         activity.date = params?.date
@@ -32,5 +32,13 @@ class ActivityService {
         }
         
         return result
+    }
+
+    def getAll() {
+        return Activity.findAll()
+    }
+
+    def getAllByCategory(Category category) {
+        return Activity.findAllByCategory(category)
     }
 }

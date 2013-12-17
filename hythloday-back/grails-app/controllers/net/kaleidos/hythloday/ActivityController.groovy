@@ -17,8 +17,20 @@ class ActivityController {
         render activity as JSON
     }
 
-    def list() {
-        def activities = Activity.findAll()
+    def list(ActivityFilterCommand cmd) {
+        if (cmd.hasErrors()) {
+            render(status: 400)
+            
+            return
+        }
+
+        def activities = []
+
+        if(cmd.categoryId) {
+            activities = activityService.getAllByCategory(cmd.getCategory())
+        } else {
+            activities = activityService.getAll()
+        }
 
         render activities as JSON
     }

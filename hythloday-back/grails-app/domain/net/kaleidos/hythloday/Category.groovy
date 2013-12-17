@@ -6,4 +6,8 @@ class Category {
     static constraints = {
         name nullable:false, blank:false, unique:true
     }
+
+    static mapping = {
+        version false
+    }    
 }

@@ -1,7 +1,7 @@
 package net.kaleidos.hythloday
 
 class Activity {
-    static hasMany = [comments: Comment, categories: Category]
+    static hasMany = [comments: Comment]
     String title
     String description
     Date date

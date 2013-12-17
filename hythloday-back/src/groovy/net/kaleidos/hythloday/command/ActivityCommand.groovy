@@ -7,7 +7,7 @@ class ActivityCommand {
     String title
     String description 
     String date
-    Long category
+    Long categoryId
 
     static constraints = {
         title nullable:false, blank:false
@@ -17,7 +17,7 @@ class ActivityCommand {
     }
 
     def getCategory() {
-        return Category.get(category)
+        return Category.get(categoryId)
     }
 
     def getDate() {
