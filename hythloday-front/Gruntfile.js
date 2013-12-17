@@ -31,10 +31,10 @@ module.exports = function (grunt) {
         files: ['{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all']
       },
-      jsTest: {
-        files: ['test/spec/{,*/}*.js'],
-        tasks: ['newer:jshint:test', 'karma']
-      },
+      //jsTest: {
+        //files: ['test/spec/{,*/}*.js'],
+        //tasks: ['newer:jshint:test', 'karma']
+      //},
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'autoprefixer']
@@ -98,12 +98,12 @@ module.exports = function (grunt) {
         'Gruntfile.js',
         '<%= yeoman.app %>/scripts/{,*/}*.js'
       ],
-      test: {
-        options: {
-          jshintrc: 'test/.jshintrc'
-        },
-        src: ['test/spec/{,*/}*.js']
-      }
+      //test: {
+        //options: {
+          //jshintrc: 'test/.jshintrc'
+        //},
+        //src: ['test/spec/{,*/}*.js']
+      //}
     },
 
     // Empties folders to start fresh
@@ -122,23 +122,23 @@ module.exports = function (grunt) {
     },
 
     // Add vendor prefixed styles
-    autoprefixer: {
-      options: {
-        browsers: ['last 1 version']
-      },
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/styles/',
-          src: '{,*/}*.css',
-          dest: '.tmp/styles/'
-        }]
-      }
-    },
+    //autoprefixer: {
+      //options: {
+        //browsers: ['last 1 version']
+      //},
+      //dist: {
+        //files: [{
+          //expand: true,
+          //cwd: '.tmp/styles/',
+          //src: '{,*/}*.css',
+          //dest: '.tmp/styles/'
+        //}]
+      //}
+    //},
 
-    
 
-    
+
+
 
     // Renames files for browser caching purposes
     rev: {
@@ -272,9 +272,9 @@ module.exports = function (grunt) {
       server: [
         'copy:styles'
       ],
-      test: [
-        'copy:styles'
-      ],
+      //test: [
+      //  'copy:styles'
+      //],
       dist: [
         'copy:styles',
         'imagemin',
@@ -310,12 +310,12 @@ module.exports = function (grunt) {
     // },
 
     // Test settings
-    karma: {
-      unit: {
-        configFile: 'karma.conf.js',
-        singleRun: true
-      }
-    }
+    //karma: {
+    //  unit: {
+    //    configFile: 'karma.conf.js',
+    //   singleRun: true
+    // }
+    //}
   });
 
 
@@ -327,7 +327,6 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
-      'autoprefixer',
       'connect:livereload',
       'watch'
     ]);
@@ -338,13 +337,13 @@ module.exports = function (grunt) {
     grunt.task.run(['serve']);
   });
 
-  grunt.registerTask('test', [
-    'clean:server',
-    'concurrent:test',
-    'autoprefixer',
-    'connect:test',
-    'karma'
-  ]);
+  //grunt.registerTask('test', [
+    //'clean:server',
+    //'concurrent:test',
+    //'autoprefixer',
+    //'connect:test',
+    //'karma'
+  //]);
 
   grunt.registerTask('build', [
     'clean:dist',
@@ -363,7 +362,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'newer:jshint',
-    'test',
     'build'
   ]);
 };
