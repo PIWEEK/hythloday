@@ -1,6 +1,4 @@
-import net.kaleidos.hythloday.marshaller.ActivityMarshaller
-import net.kaleidos.hythloday.marshaller.CommentMarshaller
-import net.kaleidos.hythloday.marshaller.CategoryMarshaller
+import net.kaleidos.hythloday.marshaller.*
 import net.kaleidos.hythloday.util.CustomObjectMarshallers
 
 // Place your Spring DSL code here
@@ -14,12 +12,14 @@ beans = {
     }
 
     categoryMarshaller(CategoryMarshaller) {}
+    zoneMarshaller(ZoneMarshaller) {}
 
     customObjectMarshallers( CustomObjectMarshallers ) {
         marshallers = [
             ref("activityMarshaller"),
             ref("commentMarshaller"),
-            ref("categoryMarshaller")
+            ref("categoryMarshaller"),
+            ref("zoneMarshaller")
         ]
     }
 }
