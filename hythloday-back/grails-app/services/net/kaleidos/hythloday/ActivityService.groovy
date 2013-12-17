@@ -34,6 +34,14 @@ class ActivityService {
         return result
     }
 
+    def getDetailData(Activity activity) {
+        def result = [:]
+
+        result.comments = activity.comments
+        
+        return result
+    }
+
     def getAll(Integer page, Integer itemsPerPage) {
         def offset = page * itemsPerPage
 

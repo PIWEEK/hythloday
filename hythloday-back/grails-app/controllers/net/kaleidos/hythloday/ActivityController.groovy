@@ -5,6 +5,21 @@ import grails.converters.JSON
 class ActivityController {
     def activityService
     
+    def detail(Long activityId) {
+        def activity = Activity.get(activityId)
+
+        if(!activity) {
+            render(status: 404)
+            return
+        }
+
+        def result = activityService.getContent(activity)
+
+        result << activityService.getDetailData(activity)
+
+        render result as JSON
+    }
+
     def publish(ActivityCommand cmd) {
         if (cmd.hasErrors()) {
             render(status: 400)
