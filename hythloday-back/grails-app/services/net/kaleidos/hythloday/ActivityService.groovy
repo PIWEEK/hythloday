@@ -5,6 +5,7 @@ class ActivityService {
         def activity = new Activity()
 
         activity.title = params.title
+        activity.zone = params.zone
         activity.description = params?.description
         activity.date = params?.date
         activity.category = params?.category
@@ -16,8 +17,8 @@ class ActivityService {
 
     def getContent(Activity activity) {
         def result = [id: activity.id,
-                title: activity.title
-        ]
+                      title: activity.title,
+                      zone: activity.zone.name]
 
         if(activity.description) {
             result.description = activity.description

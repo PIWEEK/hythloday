@@ -8,12 +8,18 @@ class ActivityCommand {
     String description 
     String date
     Long categoryId
+    Long zoneId
 
     static constraints = {
         title nullable:false, blank:false
+        zoneId nullable:false, blank:false        
         description nullable:true, blank:true
         date nullable:true, blank:true
         category nullable:true, blank:true
+    }
+
+    def getZone() {
+        return Zone.get(zoneId)
     }
 
     def getCategory() {
@@ -40,6 +46,7 @@ class ActivityCommand {
         def category
 
         return [title: title,
+                zone: getZone(),
                 description: description,
                 date: getDate(),
                 category: getCategory()
