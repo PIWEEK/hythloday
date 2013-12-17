@@ -1,6 +1,7 @@
 class UrlMappings {
 
 	static mappings = {
-        name createActivity: "/activity" { controller = "activity"; action = [ POST: "publish" ] }
+        name activity: "/activity" { controller = "activity"; action = [ POST: "publish", GET: "list" ] }
+
 	}
 }

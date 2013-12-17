@@ -7,6 +7,7 @@ class Activity {
     Date date
     Category category
     User user
+    Date dateCreated
 
     static constraints = {
         title nullable:false, blank:false
