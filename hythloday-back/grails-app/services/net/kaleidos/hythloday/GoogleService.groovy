@@ -4,7 +4,7 @@ import grails.converters.JSON
 
 import org.springframework.transaction.annotation.*
 import org.scribe.builder.ServiceBuilder
-import org.scribe.builder.api.GoogleApi
+import org.scribe.builder.api.Google2Api
 import org.scribe.model.OAuthRequest
 import org.scribe.model.Verb
 import org.scribe.model.Verifier
@@ -21,13 +21,12 @@ class GoogleService {
     static transactional = false
     private static final String SCOPE = "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile";
 
-    def getAccessTokenLogin(code, requestToken) {
+    def getAccessTokenLogin(code) {
         try {
-            requestToken = requestToken as Token
             getAuthServiceLogin()
 
             def verifier = new Verifier(code)
-            def token = authServiceLogin.getAccessToken(requestToken, verifier)
+            def token = authServiceLogin.getAccessToken(null, verifier)
             
             return token
         } catch (Exception e) {
@@ -42,7 +41,7 @@ class GoogleService {
             def key = grailsApplication.config.google.key as String
             def secret = grailsApplication.config.google.secret as String
 
-            authServiceLogin = new ServiceBuilder().provider(GoogleApi.class)
+            authServiceLogin = new ServiceBuilder().provider(Google2Api.class)
             .apiKey(key)
             .apiSecret(secret)
             .scope(SCOPE)
@@ -50,10 +49,7 @@ class GoogleService {
             .build()
         }
 
-        Token requestToken = authServiceLogin.getRequestToken()
-        def authUrl = authServiceLogin.getAuthorizationUrl(requestToken)
-
-        return  [authUrl : authUrl, requestToken : requestToken]
+        return authServiceLogin.getAuthorizationUrl()
     }
 
     private def sendRequest(accessToken, method, url){

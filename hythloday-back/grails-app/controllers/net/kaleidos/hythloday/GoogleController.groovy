@@ -6,11 +6,10 @@ class GoogleController {
     def googleService
     
     def callbackLogin() {
-        def requestToken = session["GOOGLE_TOKEN"]
-        def accessToken = googleService.getAccessTokenLogin(params.oauth_verifier, requestToken)
+        def accessToken = googleService.getAccessTokenLogin(params.code)
 
         if (!accessToken) {
-            return redirect(mapping:'googleLogin')
+            return
         }
         
         def userInfo = googleService.getUserInfoLogin(accessToken)
@@ -19,10 +18,11 @@ class GoogleController {
     }
 
     def googleLogin() {
-        def oauthService = googleService.getAuthServiceLogin()
+        def authUrl = googleService.getAuthServiceLogin()
 
-        session["GOOGLE_TOKEN"] = oauthService.requestToken
-        redirect (url:  oauthService.authUrl)
+        println authUrl
+
+        redirect (url:  authUrl)
 
         return
     }
