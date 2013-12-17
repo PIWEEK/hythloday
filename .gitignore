@@ -27,3 +27,6 @@ DataSource.groovy
 grails-base-common.properties
 web-images
 grails-base-config.properties
+/hythloday-mobile/merges/
+/hythloday-mobile/platforms/
+/hythloday-mobile/plugins/
