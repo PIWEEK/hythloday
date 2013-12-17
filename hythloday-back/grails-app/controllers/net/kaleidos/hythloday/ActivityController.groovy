@@ -24,12 +24,14 @@ class ActivityController {
             return
         }
 
+        def itemsPerPage = 3
+
         def activities = []
 
         if(cmd.categoryId) {
-            activities = activityService.getAllByCategory(cmd.getCategory())
+            activities = activityService.getAllByCategory(cmd.getCategory(), cmd.page, itemsPerPage)
         } else {
-            activities = activityService.getAll()
+            activities = activityService.getAll(cmd.page, itemsPerPage)
         }
 
         render activities as JSON

@@ -34,11 +34,21 @@ class ActivityService {
         return result
     }
 
-    def getAll() {
-        return Activity.findAll()
+    def getAll(Integer page, Integer itemsPerPage) {
+        def offset = page * itemsPerPage
+
+        return Activity.list(offset: offset,
+                             max: itemsPerPage,
+                             sort:"dateCreated",
+                             order:"desc")
     }
 
-    def getAllByCategory(Category category) {
-        return Activity.findAllByCategory(category)
+    def getAllByCategory(Category category, Integer page, Integer itemsPerPage) {
+        def offset = page * itemsPerPage
+
+        return Activity.findAllByCategory(category, [offset: offset,
+                                                     max: itemsPerPage,
+                                                     sort:"dateCreated",
+                                                     order:"desc"])
     }
 }
