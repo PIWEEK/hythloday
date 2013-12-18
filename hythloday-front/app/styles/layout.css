@@ -33,6 +33,7 @@
 
 /* line 30, layout.scss */
 .menu {
+  display: none;
   background-color: #111;
   box-sizing: border-box;
   left: 0;
@@ -43,29 +44,29 @@
   width: 514px;
 }
 
-/* line 42, layout.scss */
+/* line 43, layout.scss */
 .user-info img {
   float: left;
 }
-/* line 45, layout.scss */
+/* line 46, layout.scss */
 .user-info .right {
   float: left;
   margin: 0 0 0 17px;
 }
-/* line 49, layout.scss */
+/* line 50, layout.scss */
 .user-info h2 {
   color: #ccc;
   font-size: 30px;
   font-weight: normal;
   margin: 0;
 }
-/* line 55, layout.scss */
+/* line 56, layout.scss */
 .user-info h3 {
   color: #ccc;
   margin: 0;
 }
 
-/* line 62, layout.scss */
+/* line 63, layout.scss */
 .options h2 {
   border-bottom: 2px solid #b3b3b3;
   font-size: 22px;
@@ -73,20 +74,20 @@
   color: #b3b3b3;
   margin: 66px 0 0 0;
 }
-/* line 69, layout.scss */
+/* line 70, layout.scss */
 .options ul {
   margin: 0;
   padding: 0;
 }
-/* line 73, layout.scss */
+/* line 74, layout.scss */
 .options li {
   list-style: none;
 }
-/* line 75, layout.scss */
+/* line 76, layout.scss */
 .options li.geo {
   background: url(../images/geo2.png) 98% center no-repeat;
 }
-/* line 79, layout.scss */
+/* line 80, layout.scss */
 .options a {
   color: #e6e6e6;
   text-decoration: none;

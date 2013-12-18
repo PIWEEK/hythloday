@@ -6,7 +6,7 @@
 @import "compass/css3/transition";
 
 .single-activity{
-    padding: 25px 0;
+    padding: 25px 4%;
     border-bottom: 1px solid #dedede;
     &:last-child {
         border: none;
@@ -60,4 +60,37 @@
             }
         }
     }
+}
+
+
+.category-menu {
+  background-color: #e9e9e9;
+  padding: 10px 0 0 0;
+  margin: 0;
+  li {
+    float: left;
+    list-style: none;
+    border-bottom: 8px solid #e9e9e9;
+    &:last-child {
+      a {
+        border-right: 0;
+      }
+    }
+  }
+  .selected {
+        border-bottom: 8px solid #FF8800;
+  }
+  a {
+    height: 53px;
+    line-height: 53px;
+    display: block;
+    color: #000;
+    font-size: 28px;
+    border-right: 1px solid #8f8f8f;
+    padding: 0 106px;
+    cursor: pointer;
+  }
+  div {
+    padding-bottom: 3px;
+  }
 }
