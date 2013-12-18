@@ -101,6 +101,16 @@ module.exports = function (grunt) {
             }
         },
 
+        typescript: {
+            base: {
+                src: ['<%= yeoman.app %>/scripts/{,*/}*.ts'],
+                dest: '<%= yeoman.app %>/scripts/{,*/}*.js',
+                options: {
+                  module: 'amd'
+                }
+            }
+        },
+
         // Make sure code styles are up to par and there are no obvious mistakes
         jshint: {
             options: {

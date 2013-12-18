@@ -46,7 +46,8 @@
     "karma": "~0.10.8",
     "karma-ng-html2js-preprocessor": "~0.1.0",
     "grunt-contrib-jade": "~0.8.0",
-    "grunt-contrib-sass": "~0.6.0"
+    "grunt-contrib-sass": "~0.6.0",
+    "grunt-typescript": "~0.2.7"
   },
   "engines": {
     "node": ">=0.8.0"
