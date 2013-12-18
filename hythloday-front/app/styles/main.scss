@@ -11,8 +11,9 @@
  * ========================================================================== */
 
 @import "compass/css3/font-face";
+
 @include font-face("Roboto", font-files("../fonts/Roboto-Regular-webfont.ttf", "../fonts/Roboto-Regular-webfont.eot", "../fonts/Roboto-Regular-webfont.woff", "../fonts/Roboto-Regular-webfont.svg"));
-@include font-face("RobotoCondensed", font-files("../fonts/Roboto-Condensed-webfont.ttf", "../fonts/Roboto-Condensed-webfont.eot", "../fonts/Roboto-Condensed-webfont.woff", "../fonts/Roboto-Condensed-webfont.svg"));
+@include font-face("Condensed", font-files("../fonts/Roboto-Condensed-webfont.ttf", "../fonts/Roboto-Condensed-webfont.eot", "../fonts/Roboto-Condensed-webfont.woff", "../fonts/Roboto-Condensed-webfont.svg"));
 @include font-face("EastMarket", font-files("../fonts/EastMarket-webfont.ttf", "../fonts/EastMarket-webfont.eot", "../fonts/EastMarket-webfont.woff", "../fonts/EastMarket-webfont.svg"));
 
 
@@ -26,7 +27,7 @@ input,
 select,
 textarea {
     color: #222;
-    font-family: "RobotoCondensed";
+    font-family: "Condensed";
 }
 
 body {
