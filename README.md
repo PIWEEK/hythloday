@@ -7,5 +7,5 @@ this application let know activities proposed by other travellers
 who need people or want to meet others
 without this app these fantastic places will never know.
 
-A app born in V #piweek
+An app born in V #piweek
 
