@@ -1,13 +1,134 @@
+@import "compass/css3";
+@import "compass/css3/transform-legacy";
+
 .top-bar {
-  background-color: #ff8800;
-  h1 {
-    color: #FFF;
-    font-size: 49px;
-    float: left;
-    font-weight: normal;
-    margin: 0 0 0 34px;
-  }
-  span {
+    background-color: #ff8800;
+    padding: 0.5%;
+    $button-width: 3rem;
+    $lines-height: 6px;
+    .menu-btn {
+        width: $button-width - .5rem;
+        height: $button-width - 1rem;
+        display: inline-block;
+        position: relative;
+        left: 15px;
+        top: 2px;
+        &:hover {
+            span{
+                display: block;
+                height: $lines-height;
+                background: rgba(255, 255, 255, 0);
+                position: relative;
+                top: 50%;
+                margin-top: -3px;
+                transition: all .1s ease-in;
+                &:after {
+                    display: block;
+                    height: $lines-height;
+                    background: #FFF;
+                    position: relative;
+                    top: -$lines-height;
+                    content: ' ';
+                    transition: all .1s ease-in;
+                    @include rotate(45deg);
+                }
+                &:before {
+                    display: block;
+                    height: $lines-height;
+                    background: #FFF;
+                    position: relative;
+                    top: 0;
+                    content: ' ';
+                    transition: all .2s ease-in;
+                    @include rotate(-45deg);
+                }
+            }
+        }
+        span {
+            display: block;
+            height: $lines-height;
+            background: #FFF;
+            position: relative;
+            top: 50%;
+            margin-top: -3px;
+            &:after {
+                display: block;
+                height: $lines-height;
+                background: #FFF;
+                position: relative;
+                top: 7px;
+                content: ' ';
+            }
+            &:before {
+                display: block;
+                height: $lines-height;
+                background: #FFF;
+                position: relative;
+                top: -13px;
+                content: ' ';
+            }
+            &.active {
+                display: block;
+                height: $lines-height;
+                background: rgba(255, 255, 255, 0);
+                position: relative;
+                top: 50%;
+                margin-top: -3px;
+                transition: all .1s ease-in;
+                &:after {
+                    display: block;
+                    height: $lines-height;
+                    background: #FFF;
+                    position: relative;
+                    top: -$lines-height;
+                    content: ' ';
+                    transition: all .1s ease-in;
+                    @include rotate(45deg);
+                }
+                &:before {
+                    display: block;
+                    height: $lines-height;
+                    background: #FFF;
+                    position: relative;
+                    top: 0;
+                    content: ' ';
+                    transition: all .2s ease-in;
+                    @include rotate(-45deg);
+                }
+            }
+        }
+    }
+    h1{
+        font-size: 44px;
+        font-weight: normal;
+        margin: 3px 0 0 34px;
+        display: inline-block;
+        font-family: "EastMarket";
+        line-height: 44px;
+        a {
+            color: #FFF;
+            text-decoration: none;
+        }
+    }
+    .localization {
+        display: inline-block;
+        float: right;
+        position: relative;
+        top: 3px;
+        a {
+            font-family: "Roboto";
+            color: #FFF;
+            font-size: 26px;
+            text-decoration: none;
+            vertical-align: bottom;
+        }
+        img {
+            height: 36px;
+        }
+    }
+/*
+
+    span {
     background: url(../images/menu.png) 0 0 no-repeat;
     cursor: pointer;
     display: block;
@@ -15,8 +136,8 @@
     height: 27px;
     margin: 22px 0 0 25px;
     width: 40px;
-  }
-  div {
+    }
+    div {
     background: url(../images/geo.png) center right no-repeat;
     color: #FFF;
     cursor: pointer;
@@ -24,9 +145,9 @@
     font-size: 49px;
     padding-right: 43px;
     margin-right: 25px;
-  }
+    }
+*/
 }
-
 .menu {
   display: none;
   background-color: #111;
