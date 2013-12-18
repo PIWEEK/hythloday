@@ -38,9 +38,13 @@ module.exports = function (grunt) {
                 //files: ['test/spec/{,*/}*.js'],
                 //tasks: ['newer:jshint:test', 'karma']
             //},
+            css: {
+                files: ['<%= yeoman.app %>/styles/{,*/}*.scss'],
+                tasks: ['compass']
+            },
             styles: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-                asks: ['newer:copy:styles', 'autoprefixer']
+                tasks: ['newer:copy:styles', 'autoprefixer']
             },
             jade: {
                 files: ['<%= yeoman.app %>/*.jade'],
@@ -123,20 +127,20 @@ module.exports = function (grunt) {
             server: '.tmp'
         },
 
-        // Add vendor prefixed styles
-            //autoprefixer: {
-                //options: {
-                    //browsers: ['last 1 version']
-                //},
-            //dist: {
-                //files: [{
-                    //expand: true,
-                    //cwd: '.tmp/styles/',
-                    //src: '{,*/}*.css',
-                    //dest: '.tmp/styles/'
-                //}]
-            //}
-        //},
+        //Add vendor prefixed styles
+        autoprefixer: {
+            options: {
+                browsers: ['last 1 version']
+            },
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '.tmp/styles/',
+                    src: '{,*/}*.css',
+                    dest: '.tmp/styles/'
+                }]
+            }
+        },
 
         // Renames files for browser caching purposes
         rev: {
@@ -167,6 +171,17 @@ module.exports = function (grunt) {
                 } ]
             }
         },
+
+        compass: {
+            dist: {
+                options: {
+                    sassDir: '<%= yeoman.app %>/styles',
+                    cssDir: '<%= yeoman.app %>/styles',
+                    outputStyle: 'expanded'
+                }
+            }
+        },
+
         // Reads HTML for usemin blocks to enable smart builds that automatically
         // concat, minify and revision files. Creates configurations in memory so
         // additional tasks can operate on them
@@ -364,6 +379,8 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'jade',
+        'compass',
+        'autoprefixer',
         'useminPrepare',
         'concurrent:dist',
         'concat',
