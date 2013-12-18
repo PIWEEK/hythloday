@@ -202,3 +202,7 @@ textarea[contenteditable] {
        only screen and (min-resolution: 144dpi) {
     /* Style adjustments for viewports that meet the condition */
 }
+
+@import "layout.scss";
+@import "detail.scss";
+@import "timeline.scss";
