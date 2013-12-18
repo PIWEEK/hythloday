@@ -26,3 +26,66 @@
     margin-right: 25px;
   }
 }
+
+.menu {
+  background-color: #111;
+  box-sizing: border-box;
+  left: 0;
+  height: 100%;
+  padding: 60px 20px;
+  position: fixed;
+  top: 0;
+  width: 514px;
+}
+
+.user-info {
+  img {
+    float: left;
+  }
+  .right {
+    float: left;
+    margin: 0 0 0 17px;
+  }
+  h2 {
+    color: #ccc;
+    font-size: 30px;
+    font-weight: normal;
+    margin: 0;
+  }
+  h3 {
+    color: #ccc;
+    margin: 0;
+  }
+}
+
+.options {
+  h2 {
+    border-bottom: 2px solid #b3b3b3;
+    font-size: 22px;
+    padding-bottom: 8px;
+    color: #b3b3b3;
+    margin: 66px 0 0 0;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+    &.geo {
+      background: url(../images/geo2.png) 98% center no-repeat;
+    }
+  }
+  a {
+    color: #e6e6e6;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    height: 64px;
+    display: block;
+    padding-left: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #b3b3b3;
+  }
+}

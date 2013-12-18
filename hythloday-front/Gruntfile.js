@@ -102,7 +102,7 @@ module.exports = function (grunt) {
                 src: ['<%= yeoman.app %>/scripts/{,*/}*.ts'],
                 dest: '<%= yeoman.app %>/scripts/{,*/}*.js',
                 options: {
-                  module: 'amd'
+                    module: 'amd'
                 }
             }
         },

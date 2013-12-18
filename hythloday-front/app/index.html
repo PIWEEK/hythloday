@@ -33,6 +33,21 @@
       <div>Oviendo</div>
     </div>
     <div ng-view="" class="container"></div>
+    <div class="menu">
+      <div class="user-info clearfix"><img src="images/borrar/user.png">
+        <div class="right"> 
+          <h2>Xavi</h2>
+          <h3>You are currently in Oviedo</h3>
+        </div>
+      </div>
+      <div class="options">
+        <h2>Options</h2>
+        <ul>
+          <li><a href="#">HAZ UNA PROPUESTA</a></li>
+          <li class="geo"><a href="#">LOCALÍZATE [Oviedo]</a></li>
+        </ul>
+      </div>
+    </div>
     <script src="bower_components/angular/angular.js"></script>
     <!--build:js scripts/modules.js-->
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -42,6 +57,7 @@
     <!--endbuild-->
     <!--build:js({.tmp,app}) scripts/scripts.js-->
     <script src="scripts/app.js"></script>
+    <script src="scripts/services/api.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <!--endbuild-->
   </body>

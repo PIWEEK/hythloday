@@ -37,6 +37,21 @@ html(class="no-js", lang="en")
 
         .container(ng-view="")
 
+        .menu
+          .user-info.clearfix
+            img(src="images/borrar/user.png")
+            .right 
+              h2 Xavi
+              h3 You are currently in Oviedo
+
+          .options
+            h2 Options
+            ul
+              li
+                a(href="#") HAZ UNA PROPUESTA
+              li.geo
+                a(href="#") LOCALÍZATE [Oviedo]
+
         script(src="bower_components/angular/angular.js")
 
         //build:js scripts/modules.js
@@ -48,5 +63,6 @@ html(class="no-js", lang="en")
 
         //build:js({.tmp,app}) scripts/scripts.js
         script(src="scripts/app.js")
+        script(src="scripts/services/api.js")
         script(src="scripts/controllers/main.js")
         //endbuild
