@@ -1,0 +1,53 @@
+/* ===========================================================================
+ * Timeline
+ * =========================================================================== */
+
+@import "compass/css3";
+
+.single-activity{
+    padding: 25px 0;
+    border-bottom: 1px solid #dedede;
+    &:last-child {
+        border: none;
+    }
+    .user-data {
+        width: 100px;
+        display: inline-block;
+        margin-right: 15px;
+        vertical-align: top;
+        padding-top: 8px;
+        img {
+            border: 1px solid #f1f1f1;
+            display: block;
+            @include box-shadow(#ccc 0px 0px 6px);
+        }
+        span{
+            display: block;
+            text-align: center;
+            padding-top: 5px;
+            font-weight: bold;
+        }
+    }
+    .activity-data {
+        width: 70%;
+        display: inline-block;
+        h2.activity-title {
+            margin: 0;
+            color: #333;
+        }
+        .activity-description {
+            color: #999;
+            font-size: 14px;
+        }
+        .activity-time {
+            color: #4d4d4d;
+            img {
+                width: 2%;
+                height: 2%;
+                margin-right: 10px;
+                color: #ff8800;
+                vertical-align: top;
+            }
+        }
+    }
+}
