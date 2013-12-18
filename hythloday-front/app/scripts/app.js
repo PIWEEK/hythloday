@@ -9,7 +9,7 @@ angular.module('hythlodayApp', [
 .config(function ($routeProvider) {
     $routeProvider
     .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/timeline.html',
         controller: 'MainCtrl'
     })
     .otherwise({

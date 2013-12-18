@@ -62,16 +62,19 @@ textarea {
  * ========================================================================== */
 
     @import "normalize.scss";
+    @import "layout.scss";
+    @import "detail.scss";
+    @import "timeline.scss";
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
+.container{
+    padding: 0 5%;
+}
 
 
-   @import "layout.scss";
-   @import "detail.scss";
-   @import "timeline.scss";
 
 
 
