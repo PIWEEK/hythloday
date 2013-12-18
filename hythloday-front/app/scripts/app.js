@@ -8,7 +8,7 @@ angular.module('hythlodayApp', [
 .config(function ($routeProvider) {
     $routeProvider
     .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/single.html',
         controller: 'MainCtrl'
     })
     .otherwise({

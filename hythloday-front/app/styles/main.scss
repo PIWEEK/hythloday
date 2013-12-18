@@ -7,6 +7,15 @@
  */
 
 /* ==========================================================================
+ * Font import
+ * ========================================================================== */
+
+@import "compass/css3/font-face";
+@include font-face("Roboto", font-files("../fonts/Roboto-Regular-webfont.ttf", "../fonts/Roboto-Regular-webfont.eot", "../fonts/Roboto-Regular-webfont.woff", "../fonts/Roboto-Regular-webfont.svg"));
+@include font-face("RobotoCondensed", font-files("../fonts/Roboto-Condensed-webfont.ttf", "../fonts/Roboto-Condensed-webfont.eot", "../fonts/Roboto-Condensed-webfont.woff", "../fonts/Roboto-Condensed-webfont.svg"));
+
+
+/* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
 
@@ -16,6 +25,7 @@ input,
 select,
 textarea {
     color: #222;
+    font-family: "Roboto";
 }
 
 body {
@@ -62,28 +72,17 @@ textarea {
  * ========================================================================== */
 
     @import "normalize.scss";
+    @import "layout.scss";
+    @import "timeline.scss";
+    @import "detail.scss";
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
-
-
-   @import "layout.scss";
-   @import "detail.scss";
-   @import "timeline.scss";
-
-
-
-
-
-
-
-
-
-
-
-
+.container{
+    padding: 0 4%;
+}
 
 
 /* ==========================================================================
@@ -202,7 +201,3 @@ textarea[contenteditable] {
        only screen and (min-resolution: 144dpi) {
     /* Style adjustments for viewports that meet the condition */
 }
-
-@import "layout.scss";
-@import "detail.scss";
-@import "timeline.scss";

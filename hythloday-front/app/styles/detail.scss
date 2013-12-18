@@ -1,0 +1,176 @@
+/* ===========================================================================
+ * Timeline
+ * =========================================================================== */
+
+@import "compass/css3";
+@import "compass/css3/transition";
+@import "compass/css3/shared";
+
+.single-page {
+    padding: 25px 0;
+}
+
+.single-data-top {
+    .user-data {
+        width: 100px;
+        display: inline-block;
+        margin-right: 15px;
+        vertical-align: top;
+        padding-top: 8px;
+        img {
+            border: 1px solid #f1f1f1;
+            display: block;
+            @include box-shadow(#ccc 0px 0px 6px);
+        }
+        span{
+            display: block;
+            text-align: center;
+            padding-top: 5px;
+            font-weight: bold;
+        }
+    }
+    .activity-time {
+        color: #4d4d4d;
+        img {
+            width: 2%;
+            height: 2%;
+            margin-right: 10px;
+            color: #ff8800;
+            vertical-align: top;
+        }
+    }
+    .activity-data {
+        width: 70%;
+        display: inline-block;
+        h2.activity-title{
+            margin: 0 0 15px 0;
+            a {
+                text-decoration: none;
+                color: #333;
+                &:hover {
+                    color: #999;
+                    @include transition-property(all);
+                    @include transition-duration(.2s);
+                    @include transition-timing-function(ease-in);
+                }
+            }
+        }
+        .activity-description {
+            color: #999;
+            font-size: 14px;
+            margin: 0;
+        }
+    }
+}
+
+.single-comments {
+    width: 70%;
+    margin: 50px 0 0 100px;
+    .comments-num {
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+}
+
+.user-comment {
+    .user-data {
+        width: 100px;
+        display: inline-block;
+        margin-right: 15px;
+        vertical-align: top;
+        padding-top: 8px;
+        img {
+            border: 1px solid #f1f1f1;
+            display: block;
+        }
+        span{
+            display: block;
+            text-align: center;
+            padding-top: 5px;
+            font-weight: bold;
+        }
+    }
+    .user-comment-input{
+        display: inline-block;
+        width: 80%;
+        .comment-area {
+            border: 1px solid #ccc;
+            padding: 2px;
+            position: relative;
+            background: #FFF;
+            &:after, &:before {
+                right: 100%;
+                top: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+            }
+            &:after {
+                border-color: rgba(136, 183, 213, 0);
+                border-right-color: #FFF;
+                border-width: 10px;
+                margin-top: -10px;
+            }
+            &:before {
+                border-color: rgba(194, 225, 245, 0);
+                border-right-color: #CCC;
+                border-width: 11px;
+                margin-top: -11px;
+            }
+        }
+        textarea {
+            width: 99%;
+            height: 90px;
+            outline: 0;
+            border: none;
+        }
+        .button {
+            padding: 6px 40px;
+            background: #ff8800;
+            color: #FFF;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            &:hover {
+                @include transition-property(all);
+                @include transition-duration(.3s);
+                @include transition-timing-function(ease-in);
+                background: darken(#ff8800, 10%);
+            }
+        }
+    }
+}
+.other-comments {
+    margin-top: 40px;
+}
+.single-other-comment {
+    .user-avatar {
+        width: 100px;
+        display: inline-block;
+        margin-right: 15px;
+        vertical-align: top;
+        padding-top: 8px;
+        img {
+            border: 1px solid #f1f1f1;
+            display: block;
+        }
+    }
+    .user-comment-text {
+        display: inline-block;
+        width: 80%;
+        p{
+            margin: 5px 0;
+            &.user-data {
+                color: #333;
+            }
+            &.comment {
+                color: #999;
+                font-size: 14px;
+            }
+        }
+    }
+}
