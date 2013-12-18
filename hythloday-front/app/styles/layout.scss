@@ -1,3 +1,28 @@
 .top-bar {
   background-color: #ff8800;
+  h1 {
+    color: #FFF;
+    font-size: 49px;
+    float: left;
+    font-weight: normal;
+    margin: 0 0 0 34px;
+  }
+  span {
+    background: url(../images/menu.png) 0 0 no-repeat;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 27px;
+    margin: 22px 0 0 25px;
+    width: 40px;
+  }
+  div {
+    background: url(../images/geo.png) center right no-repeat;
+    color: #FFF;
+    cursor: pointer;
+    float: right;
+    font-size: 49px;
+    padding-right: 43px;
+    margin-right: 25px;
+  }
 }
