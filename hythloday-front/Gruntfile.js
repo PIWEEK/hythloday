@@ -380,7 +380,6 @@ module.exports = function (grunt) {
         'clean:dist',
         'jade',
         'compass',
-        'autoprefixer',
         'useminPrepare',
         'concurrent:dist',
         'concat',
@@ -389,6 +388,7 @@ module.exports = function (grunt) {
         'cdnify',
         'cssmin',
         'uglify',
+        'autoprefixer',
         'rev',
         'usemin'
     ]);
