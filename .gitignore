@@ -30,3 +30,4 @@ grails-base-config.properties
 /hythloday-mobile/merges/
 /hythloday-mobile/platforms/
 /hythloday-mobile/plugins/
+npm-debug.log
