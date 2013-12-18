@@ -27,6 +27,9 @@ module.exports = function (grunt) {
 
         // Watches files for changes and runs tasks based on the changed files
         watch: {
+            options: {
+                nospawn: true
+            },
             js: {
                 files: ['{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js'],
                 tasks: ['newer:jshint:all']
@@ -38,6 +41,10 @@ module.exports = function (grunt) {
             styles: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
                 asks: ['newer:copy:styles', 'autoprefixer']
+            },
+            jade: {
+                files: ['<%= yeoman.app %>/*.jade'],
+                tasks: ['jade:compile']
             },
             gruntfile: {
                 files: ['Gruntfile.js']
