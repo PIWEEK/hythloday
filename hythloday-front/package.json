@@ -1,6 +1,11 @@
 {
   "name": "hythloday",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PIWEEK/hythloday"
+  },
+  "description": "For intrepid travellers who want to discover a different way to visit a country or a city this application let know activities proposed by other travellers",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -8,7 +13,7 @@
     "grunt-concurrent": "~0.4.1",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-coffee": "~0.7.0",
-    "grunt-contrib-compass": "~0.6.0",
+    "grunt-contrib-compass": "~0.7.0",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-connect": "~0.5.0",
     "grunt-contrib-copy": "~0.4.1",
@@ -40,7 +45,8 @@
     "karma-phantomjs-launcher": "~0.1.1",
     "karma": "~0.10.8",
     "karma-ng-html2js-preprocessor": "~0.1.0",
-    "grunt-contrib-jade": "~0.8.0"
+    "grunt-contrib-jade": "~0.8.0",
+    "grunt-contrib-sass": "~0.6.0"
   },
   "engines": {
     "node": ">=0.8.0"
