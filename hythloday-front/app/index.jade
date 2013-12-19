@@ -48,16 +48,17 @@ html(class="no-js", lang="en")
 
                 .container(ng-view="")
 
+        //build:js scripts/modules.js
         script(src="bower_components/jquery/jquery.min.js")
         script(src="bower_components/moment/min/moment-with-langs.js")
         script(src="bower_components/angular/angular.js")
-
-        //build:js scripts/modules.js
         script(src="bower_components/angular-resource/angular-resource.js")
         script(src="bower_components/angular-cookies/angular-cookies.js")
         script(src="bower_components/angular-sanitize/angular-sanitize.js")
         script(src="bower_components/angular-route/angular-route.js")
         script(src="bower_components/angular-touch/angular-touch.js")
+        script(src="bower_components/iscroll/build/iscroll.js")
+        script(src="bower_components/ng-iScroll/src/ng-iscroll.js")
         //endbuild
 
         //build:js({.tmp,app}) scripts/scripts.js

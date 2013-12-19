@@ -31,6 +31,7 @@ angular.module('hythlodayApp')
 
             $scope.categories = categories;
             $scope.activities = activities;
+            $scope.menuWidth = {width: 270 * categories.length};
         });
 }).controller('newActivityCtrl', function($scope, $http, $location, Api) {
 

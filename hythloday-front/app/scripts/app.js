@@ -2,6 +2,11 @@
 var app = {};
 
 app.initApp = function($rootScope, $location, settings, User) {
+    $rootScope.myScrollOptions = {
+        scrollX: true,
+        scrollY: false
+    };
+
     $rootScope.currentUser = User.getCurrentUser();
 
     window.moment.lang('es');
@@ -39,7 +44,8 @@ angular.module('hythlodayApp', [
     'ngResource',
     'ngSanitize',
     'ngRoute',
-    'ngTouch'
+    'ngTouch',
+    'ng-iscroll'
 ])
 .constant('settings', {
     'remoteHost': 'http://192.168.1.38:8080',

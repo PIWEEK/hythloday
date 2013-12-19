@@ -11,7 +11,9 @@
     "angular-route": "~1.2.0",
     "angular-touch": "~1.2.0",
     "moment": "~2.4.0",
-    "jquery": "~2.0.3"
+    "jquery": "~2.0.3",
+    "iscroll": "~5.0.9",
+    "ng-iScroll": "v1.2b"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",

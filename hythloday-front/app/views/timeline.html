@@ -1,9 +1,13 @@
 
-<ul class="category-menu clearfix">
-  <li ng-repeat="category in categories" ng-class="{selected: category.selected}">
-    <div><a ng-click="go('category', [category.id])">{{category.name}}</a></div>
-  </li>
-</ul>
+<div ng-iscroll="ng-iscroll" class="scroll-wrapper">
+  <div ng-style="menuWidth" class="scroller">
+    <ul class="category-menu clearfix">
+      <li ng-repeat="category in categories" ng-class="{selected: category.selected}">
+        <div><a ng-click="go('category', [category.id])">{{category.name}}</a></div>
+      </li>
+    </ul>
+  </div>
+</div>
 <div class="clearfix content-wrapper">
   <div ng-repeat="activity in activities" class="single-activity">
     <div class="user-data"><img ng-src="{{activity.userAvatar}}" alt="User Avatar"/><span>{{activity.userName}}</span></div>
