@@ -24,6 +24,8 @@ app.initApp = function($rootScope, settings, User) {
 
         return settings.host + formatUrl;
     };
+
+    $rootScope.localization = 'Ninguno';
 };
 
 angular.module('hythlodayApp', [

@@ -25,33 +25,33 @@ html(class="no-js", lang="en")
 
     body(ng-app="hythlodayApp")
 
-        .menu.hidden
+        .menu(ng-show="sideMenu")
             .user-info.clearfix
                 img(src="{{currentUser.avatar}}")
                 .right
                     h2 {{currentUser.name}}
-                    h3 You are currently in Oviedo
+                    h3 You are currently in {{localization}}
 
             .options
                 h2 Options
                 ul
                     li
                         a(href="{{urls('newActivity')}}") HAZ UNA PROPUESTA
-                    li.geo
-                        a(href="#") LOCALÍZATE [<span>Oviedo</span>]
+                    li.geo(ng-controller="LocalizationCtrl")
+                        a(href="", ng-click="setLocalization()") LOCALÍZATE [<span>{{localization}}</span>]
 
-        .wrapper
+        .wrapper(ng-class='{"menued":sideMenu==true}')
 
             .perspective
 
                 .top-bar.clearfix
 
-                    a(href="", class="menu-btn")
+                    a(href="", class="menu-btn", ng-click="sideMenu = !sideMenu", ng-class='{"active":sideMenu==true}')
                         span.lines
                     h1
                         a(href="/#", title="Hythlodæus") Hythlodæus
                     .localization
-                        a(href="", title="localízate", class="localization-btn") Oviedo
+                        a(href="", title="localízate", class="localization-btn") {{localization}}
                             img(src="/images/localization.svg", alt="localizate")
 
                 .container(ng-view="")
@@ -71,6 +71,7 @@ html(class="no-js", lang="en")
         script(src="scripts/app.js")
         script(src="scripts/services/api.js")
         script(src="scripts/services/user.js")
+        script(src="scripts/services/localization.js")
         script(src="scripts/controllers/main.js")
         script(src="scripts/filters.js")
         script(src="scripts/controllers/detail.js")
