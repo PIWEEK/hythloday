@@ -34,13 +34,11 @@ angular.module('hythlodayApp')
         });
 }).controller('newActivityCtrl', function($scope, $http, $location, Api) {
 
-    Api.category.query().$promise.then(function(result) {
-        var categories = result;
+    Api.category.query().$promise.then(function(categories) {
         $scope.categories = categories;
     });
 
-    Api.zone.query().$promise.then(function(result) {
-        var zones = result;
+    Api.zone.query().$promise.then(function(zones) {
         $scope.zones = zones;
     });
 
@@ -48,10 +46,17 @@ angular.module('hythlodayApp')
     $scope.date = now;
 
     $scope.processForm = function() {
-        var data = $scope.form;
+        var data = {};
+        var form = $scope.form;
+
+        data.title = form.title;
+        data.date = form.date;
+        data.categoryId = form.category.id
+        data.zoneId = form.zone.id
+        data.description = form.description
         data.userId = $scope.currentUser.id
 
-        Api.activity.save($scope.form).$promise.then(function(result) {
+        Api.activity.save(data).$promise.then(function(result) {
             $location.path( "/#" )
         });
     };
