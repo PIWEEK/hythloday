@@ -20,6 +20,7 @@
         img {
             border: 1px solid #f1f1f1;
             display: block;
+            width: 85px;
             @include box-shadow(#ccc 0px 0px 6px);
         }
         span{

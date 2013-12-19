@@ -1,7 +1,7 @@
 'use strict';
 var app = {};
 
-app.initUrls = function($rootScope, HOST) {
+app.initUrls = function($rootScope, settings) {
     var baseUrls = {
         'category': '/category/%s'
     };
@@ -16,7 +16,7 @@ app.initUrls = function($rootScope, HOST) {
             });
         }
 
-        return HOST + formatUrl;
+        return settings.host + formatUrl;
     };
 };
 
@@ -26,7 +26,9 @@ angular.module('hythlodayApp', [
     'ngSanitize',
     'ngRoute'
 ])
-.constant('HOST', 'http://localhost:8080')
+.constant('settings', {
+    'remoteHost': 'http://localhost:8080',
+    'host': 'http://localhost:9000'})
 .config(function ($routeProvider) {
     $routeProvider
     .when('/', {
@@ -37,4 +39,4 @@ angular.module('hythlodayApp', [
         redirectTo: '/'
     });
 })
-.run(['$rootScope', 'HOST', app.initUrls]);
+.run(['$rootScope', 'settings', app.initUrls]);

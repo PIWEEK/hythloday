@@ -32,7 +32,7 @@
         <h2>Options</h2>
         <ul>
           <li><a href="#">HAZ UNA PROPUESTA</a></li>
-          <li class="geo"><a href="#">LOCALÍZATE [Oviedo]</a></li>
+          <li class="geo"><a href="#">LOCALÍZATE [<span>Oviedo</span>]</a></li>
         </ul>
       </div>
     </div>
@@ -45,6 +45,7 @@
         <div ng-view="" class="container"></div>
       </div>
     </div>
+    <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <!--build:js scripts/modules.js-->
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -56,6 +57,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/services/api.js"></script>
     <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/filters.js">       </script>
     <!--endbuild-->
   </body>
 </html>

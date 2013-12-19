@@ -32,7 +32,7 @@ class ActivityService {
         }
 
         if(activity.date) {
-            result.date = activity.date
+            result.date = activity.date.format('YYYY-MM-dd h:mm:ss')
         }
         
         return result
