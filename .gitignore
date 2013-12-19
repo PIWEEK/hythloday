@@ -33,3 +33,4 @@ grails-base-config.properties
 npm-debug.log
 /*/*.css
 /*/*.html
+*.swp

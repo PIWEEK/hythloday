@@ -24,33 +24,37 @@ html(class="no-js", lang="en")
         //endbuild
 
     body(ng-app="hythlodayApp")
-        //if lt IE 7
-            p.browsehappy   You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
-        //if lt IE 9
-            script(src="bower_components/es5-shim/es5-shim.js")
-            script(src="bower_components/json3/lib/json3.min.js")
-
-        .top-bar.clearfix
-          span
-          h1 Hythlodæus
-          div Oviendo
-
-        .container(ng-view="")
 
         .menu
-          .user-info.clearfix
-            img(src="images/borrar/user.png")
-            .right 
-              h2 Xavi
-              h3 You are currently in Oviedo
+            .user-info.clearfix
+                img(src="/images/user_avatar.svg")
+                .right
+                    h2 Xavi
+                    h3 You are currently in Oviedo
 
-          .options
-            h2 Options
-            ul
-              li
-                a(href="#") HAZ UNA PROPUESTA
-              li.geo
-                a(href="#") LOCALÍZATE [Oviedo]
+            .options
+                h2 Options
+                ul
+                    li
+                        a(href="#") HAZ UNA PROPUESTA
+                    li.geo
+                        a(href="#") LOCALÍZATE [<span>Oviedo</span>]
+
+        .wrapper.menued
+
+            .perspective
+
+                .top-bar.clearfix
+
+                    a(href="", class="menu-btn")
+                        span.lines
+                    h1
+                        a(href="", title="Hythlodæus") Hythlodæus
+                    .localization
+                        a(href="", title="localízate", class="localization-btn") Oviedo
+                            img(src="/images/localization.svg", alt="localizate")
+
+                .container(ng-view="")
 
         script(src="bower_components/angular/angular.js")
 

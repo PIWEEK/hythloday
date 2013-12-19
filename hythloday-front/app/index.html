@@ -21,21 +21,9 @@
     <!--endbuild-->
   </head>
   <body ng-app="hythlodayApp">
-    <!--[if lt IE 7]>
-    <p class="browsehappy">  You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
-    <div class="top-bar clearfix"><span></span>
-      <h1>Hythlodæus</h1>
-      <div>Oviendo</div>
-    </div>
-    <div ng-view="" class="container"></div>
     <div class="menu">
-      <div class="user-info clearfix"><img src="images/borrar/user.png">
-        <div class="right"> 
+      <div class="user-info clearfix"><img src="/images/user_avatar.svg">
+        <div class="right">
           <h2>Xavi</h2>
           <h3>You are currently in Oviedo</h3>
         </div>
@@ -46,6 +34,15 @@
           <li><a href="#">HAZ UNA PROPUESTA</a></li>
           <li class="geo"><a href="#">LOCALÍZATE [Oviedo]</a></li>
         </ul>
+      </div>
+    </div>
+    <div class="wrapper menued">
+      <div class="perspective">
+        <div class="top-bar clearfix"><a href="" class="menu-btn"><span class="lines"></span></a>
+          <h1><a href="" title="Hythlodæus">Hythlodæus</a></h1>
+          <div class="localization"><a href="" title="localízate" class="localization-btn">Oviedo<img src="/images/localization.svg" alt="localizate"></a></div>
+        </div>
+        <div ng-view="" class="container"></div>
       </div>
     </div>
     <script src="bower_components/angular/angular.js"></script>
