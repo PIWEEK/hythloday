@@ -3,24 +3,24 @@
         fieldset
             label.
                 Título de la actividad
-            input(type="text", name="title", placeholder="¿Qué te apetece compartir?", required)
+            input(ng-model="form.title", type="text", name="title", placeholder="¿Qué te apetece compartir?", required)
         fieldset
             label.
                 Fecha
-            input(type="date", name="date", value="{{ date }}", required)
+            input(ng-model="form.date", type="date", name="date", value="{{ date }}", required)
         fieldset
             label.
                 Categoría
-            select(name="categoryId")
+            select(ng-model="form.categoryId", name="categoryId")
                 option(ng-repeat="category in categories", value="{{ category.id }}") {{ category.name }}
         fieldset
             label.localization.
                 Localización
-            select.zones(name="zoneId")
+            select.zones(ng-model="form.zoneId", name="zoneId")
                 option(ng-repeat="zone in zones", value="{{ zone.id }}") {{ zone.name }}
         fieldset
             label.
                 Descripción
-            textarea(placeholder="Cuéntanos más sobre la actividad", required, name="description")
+            textarea(ng-model="form.description", placeholder="Cuéntanos más sobre la actividad", required, name="description")
         input(type="hidden", value="7", name="userId")
         input(type="submit", id="submit", value="Enviar")

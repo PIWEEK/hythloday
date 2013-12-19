@@ -39,7 +39,7 @@ class ActivityController {
             return
         }
 
-        def itemsPerPage = 3
+        def itemsPerPage = 50
 
         def activities = []
 

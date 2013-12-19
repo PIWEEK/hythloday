@@ -32,7 +32,7 @@ angular.module('hythlodayApp')
             $scope.categories = categories;
             $scope.activities = activities;
         });
-}).controller('newActivityCtrl', function($scope, $http, Api) {
+}).controller('newActivityCtrl', function($scope, $http, $location, Api) {
 
     Api.category.query().$promise.then(function(result) {
         var categories = result;
@@ -48,14 +48,11 @@ angular.module('hythlodayApp')
     $scope.date = now;
 
     $scope.processForm = function() {
+        var data = $scope.form;
+        data.userId = $scope.currentUser.id
 
-        var data, form;
-
-        form = $('form');
-        data = form.serialize();
-
-        Api.activity.save(data).$promise.then(function(result) {
-            console.log(result);
+        Api.activity.save($scope.form).$promise.then(function(result) {
+            $location.path( "/#" )
         });
     };
 });

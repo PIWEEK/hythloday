@@ -38,7 +38,7 @@ class ActivityCommand {
         }
 
         try {
-            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm")
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd")
             format.setLenient(false);
 
             return format.parse(date)

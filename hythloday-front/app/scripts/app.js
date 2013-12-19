@@ -8,14 +8,15 @@ app.initApp = function($rootScope, settings, User) {
 
     var baseUrls = {
         'category': '/category/%s',
-        'activity': '/activity/%s'
+        'activity': '/activity/%s',
+        'newActivity': '/new-activity'
     };
 
     $rootScope.urls = function(urlName, params) {
         var url = baseUrls[urlName];
         var formatUrl = url;
 
-        if(params.length) {
+        if(params) {
             formatUrl = url.replace('%s', function() {
                 return params.shift();
             });
