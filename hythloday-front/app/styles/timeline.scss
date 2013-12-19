@@ -71,15 +71,18 @@
     float: left;
     list-style: none;
     border-bottom: 8px solid #e9e9e9;
+    transition: all .3s ease-in;
     &:last-child {
       a {
         border-right: 0;
       }
     }
+    &:hover, &.selected {
+        border-bottom: 8px solid #FF8800;
+        transition: all .3s ease-in;
+    }
   }
-  .selected {
-    border-bottom: 8px solid #FF8800;
-  }
+
   a {
     height: 53px;
     line-height: 53px;
@@ -87,7 +90,7 @@
     color: #000;
     font-size: 28px;
     border-right: 1px solid #8f8f8f;
-    padding: 0 106px;
+    padding: 0 95px;
     cursor: pointer;
     text-decoration: none;
   }
