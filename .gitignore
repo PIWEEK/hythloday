@@ -31,6 +31,6 @@ grails-base-config.properties
 /hythloday-mobile/platforms/
 /hythloday-mobile/plugins/
 npm-debug.log
-/*/*.css
+*.css
 *.html
 *.swp
