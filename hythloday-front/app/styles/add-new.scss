@@ -17,6 +17,7 @@ input, textarea {
 .add-new-activity {
     padding: 25px 4%;
     font-family: "Roboto";
+    width: 80%;
     label {
         font-size: 1rem;
         &.localization {
@@ -27,8 +28,8 @@ input, textarea {
         font-size: 1.6rem;
         margin:15px;
         padding: 5px;
+        width: 95%;
         border-bottom: 1px solid #CCC;
-        width: 75%;
         clear: both;
         transition: all .3s ease-in;
         &:focus {

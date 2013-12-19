@@ -32,4 +32,30 @@ angular.module('hythlodayApp')
             $scope.categories = categories;
             $scope.activities = activities;
         });
+}).controller('newActivityCtrl', function($scope, $http, Api) {
+
+    Api.category.query().$promise.then(function(result) {
+        var categories = result;
+        $scope.categories = categories;
+    });
+
+    Api.zone.query().$promise.then(function(result) {
+        var zones = result;
+        $scope.zones = zones;
+    });
+
+    var now = moment().format("YYYY-MM-DD");
+    $scope.date = now;
+
+    $scope.processForm = function() {
+
+        var data, form;
+
+        form = $('form');
+        data = form.serialize();
+
+        Api.activity.save(data).$promise.then(function(result) {
+            console.log(result);
+        });
+    };
 });
