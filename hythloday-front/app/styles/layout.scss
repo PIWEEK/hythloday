@@ -23,6 +23,7 @@
                 position: relative;
                 top: 50%;
                 margin-top: -3px;
+                border-radius: 3px;
                 transition: all .1s ease-in;
                 &:after {
                     display: block;
@@ -30,6 +31,7 @@
                     background: #FFF;
                     position: relative;
                     top: -$lines-height;
+                    border-radius: 3px;
                     content: ' ';
                     transition: all .1s ease-in;
                     @include rotate(45deg);
@@ -39,6 +41,7 @@
                     height: $lines-height;
                     background: #FFF;
                     position: relative;
+                    border-radius: 3px;
                     top: 0;
                     content: ' ';
                     transition: all .2s ease-in;
