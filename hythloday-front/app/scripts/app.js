@@ -49,6 +49,9 @@ angular.module('hythlodayApp', [
             templateUrl: 'views/single.html',
             controller: 'DetailCtrl'
         })
+        .when('/new-activity', {
+            templateUrl: 'views/add-new.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
