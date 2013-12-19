@@ -54,8 +54,4 @@ angular.module('hythlodayApp', [
             redirectTo: '/'
         });
 })
-<<<<<<< HEAD
 .run(['$rootScope', 'settings', app.initApp]);
-=======
-.run(['$rootScope', 'settings', app.initUrls]);
->>>>>>> Add new activity form
