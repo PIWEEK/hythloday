@@ -1,7 +1,9 @@
 'use strict';
 var app = {};
 
-app.initUrls = function($rootScope, settings) {
+app.initApp = function($rootScope, settings) {
+    moment.lang('es');
+
     var baseUrls = {
         'category': '/category/%s',
         'activity': '/activity/%s'
@@ -49,4 +51,4 @@ angular.module('hythlodayApp', [
             redirectTo: '/'
         });
 })
-.run(['$rootScope', 'settings', app.initUrls]);
+.run(['$rootScope', 'settings', app.initApp]);
