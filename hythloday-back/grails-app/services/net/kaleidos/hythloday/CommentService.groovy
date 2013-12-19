@@ -4,7 +4,8 @@ class CommentService {
     def getContent(Comment comment) {
         def result = [text: comment.text,
                       userName: comment.user.name,
-                      userAvatar: comment.user.fullPathAvatar]
+                      userAvatar: comment.user.fullPathAvatar,
+                      date: comment.dateCreated.format('YYYY-MM-dd HH:mm:ss')]
         
         return result
     }

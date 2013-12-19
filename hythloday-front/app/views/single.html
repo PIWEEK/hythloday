@@ -1,40 +1,33 @@
 
 <div class="single-page clearfix">
   <div class="single-data-top">
-    <div class="user-data"><img src="/images/user_avatar.svg" alt="User Avatar"/><span>   Username</span></div>
+    <div class="user-data"><img src="{{activity.userAvatar}}" alt="User Avatar"/><span>   {{activity.userName}}</span></div>
     <div class="activity-data">
-      <h2 class="activity-title"><a href="#" title="Ruta con raquetas de nieve por la montaña">Ruta con raquetas de nieve por la montaña</a></h2>
-      <div class="activity-time"><img src="/images/clock.png" alt="Horario de la actividad"/><span>La actividad se desarrollará el <strong> martes 14 de diciembre a las 17.00 </strong></span></div>
+      <h2 class="activity-title">{{activity.title}}</h2>
+      <div class="activity-time"><img src="/images/clock.png" alt="Horario de la actividad"/><span>La actividad se desarrollará el <strong> {{activity.date|timelineDate}}</strong></span></div>
       <p class="activity-description">
-        En cuanto a la cesta de compra, en ambas ciudades hay tiendas de comestibles económicas donde comprar frutas
-        y verduras, supermecados a montones (yo no suelo comprar mucho en supermercado pero los precios son los mismos
-        en el súper de Oviedo que en el mismo súper de Gijón) y mercado los domingos: en Oviedo el Fontán (ropa, plantas)
-        y en Gijón el Rastro (comida, plantas,
+        {{activity.description}}
         
       </p>
     </div>
   </div>
   <div class="single-comments">
-    <div class="comments-num">10 comentarios</div>
+    <div class="comments-num">{{comments.length}} comentarios</div>
     <div class="user-comment">
       <div class="user-data"><img src="/images/user_avatar.svg" alt="User Avatar"/><span>   Username</span></div>
-      <div class="user-comment-input">
+      <form ng-submit="submitComment()" class="user-comment-input">
         <div class="comment-area">
-          <textarea placeholder="Escribe un comentario"></textarea>
-        </div><a href="" title="Comenta" class="button">Comenta</a>
-      </div>
+          <textarea placeholder="Escribe un comentario" name="text" required="required" ng-model="comment"></textarea>
+        </div>
+        <input type="submit" class="button"/>
+      </form>
     </div>
     <div class="other-comments">
-      <div class="single-other-comment">
-        <div class="user-avatar"><img src="/images/user_avatar.svg" alt="User Avatar"/></div>
+      <div ng-repeat="comment in comments" class="single-other-comment">
+        <div class="user-avatar"><img src="{{comment.userAvatar}}" alt="User Avatar"/></div>
         <div class="user-comment-text">
-          <p class="user-data"><strong>Miss Iocaína</strong> hace 10 minutos</p>
-          <p class="comment">
-            Un día de actividades para mirar nuestro Patrimonio Cultural con los ojos de quienes lo vieron por primera vez.
-            Recorridos y visitas para trasladarnos al momento original del patrimonio histórico de Madrid,
-            con ambientación musical y de época. Redescubre Conde Duque, las iglesias de Montserrat y de Las Maravillas,
-            Museo de Historia y Escuelas Pías de San Antón (COAM)..
-          </p>
+          <p class="user-data"><strong>{{comment.userName}}</strong> hace {{comment.date|commentDate}}</p>
+          <p class="comment">{{comment.text}}</p>
         </div>
       </div>
     </div>

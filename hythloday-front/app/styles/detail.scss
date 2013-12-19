@@ -18,6 +18,7 @@
         vertical-align: top;
         padding-top: 8px;
         img {
+            width: 85px;
             border: 1px solid #f1f1f1;
             display: block;
             @include box-shadow(#ccc 0px 0px 6px);
@@ -129,7 +130,8 @@
             border: none;
         }
         .button {
-            padding: 6px 40px;
+            width: 100%;
+            padding: 15px 40px;
             background: #ff8800;
             color: #FFF;
             display: block;
@@ -157,6 +159,7 @@
         img {
             border: 1px solid #f1f1f1;
             display: block;
+            width: 85px;
         }
     }
     .user-comment-text {
@@ -168,6 +171,7 @@
                 color: #333;
             }
             &.comment {
+                white-space: pre;               
                 color: #999;
                 font-size: 14px;
             }

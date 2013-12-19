@@ -32,7 +32,7 @@ class ActivityService {
         }
 
         if(activity.date) {
-            result.date = activity.date.format('YYYY-MM-dd h:mm:ss')
+            result.date = activity.date.format('YYYY-MM-dd HH:mm:ss')
         }
         
         return result
@@ -41,7 +41,7 @@ class ActivityService {
     def getDetailData(Activity activity) {
         def result = [:]
 
-        result.comments = activity.comments
+        result.comments = Comment.findAllByActivity(activity, [sort: 'dateCreated', order:"desc"])
         
         return result
     }

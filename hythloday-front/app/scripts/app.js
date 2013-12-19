@@ -41,6 +41,10 @@ angular.module('hythlodayApp', [
             templateUrl: 'views/timeline.html',
             controller: 'MainCtrl'
         })
+        .when('/activity/:id', {
+            templateUrl: 'views/single.html',
+            controller: 'DetailCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         });
