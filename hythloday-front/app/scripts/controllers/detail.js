@@ -13,6 +13,8 @@ angular.module('hythlodayApp')
                 userId: $scope.currentUser.id
             };
 
+            $scope.comment = "";
+
             Api.comment.save(data).$promise.then(function() {
                 load();
             });

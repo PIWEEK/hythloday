@@ -4,7 +4,8 @@
     <div class="user-data"><img src="{{activity.userAvatar}}" alt="User Avatar"/><span>   {{activity.userName}}</span></div>
     <div class="activity-data">
       <h2 class="activity-title">{{activity.title}}</h2>
-      <div class="activity-time"><img src="/images/clock.png" alt="Horario de la actividad"/><span>La actividad se desarrollará el <strong> {{activity.date|timelineDate}}</strong></span></div>
+      <div class="activity-time"><img src="/images/clock.png" alt="Horario de la actividad"/><span ng-if="timelineDate">
+          <La>actividad se desarrollará el <strong> {{activity.date|timelineDate}}</strong></La></span></div>
       <p class="activity-description">
         {{activity.description}}
         

@@ -34,3 +34,4 @@ npm-debug.log
 *.css
 *.html
 *.swp
+bower_components

@@ -84,4 +84,3 @@ angular.module('hythlodayApp')
     //     $scope.localization = '?';
     // }
 });
-

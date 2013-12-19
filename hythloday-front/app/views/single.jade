@@ -8,7 +8,7 @@
               {{activity.title}}
             .activity-time
                     img(src="/images/clock.png", alt="Horario de la actividad")
-                    span.
+                    span(ng-if="timelineDate")
                         La actividad se desarrollará el <strong> {{activity.date|timelineDate}}</strong>
             p.activity-description.
               {{activity.description}}
