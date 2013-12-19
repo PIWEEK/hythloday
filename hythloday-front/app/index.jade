@@ -27,9 +27,9 @@ html(class="no-js", lang="en")
 
         .menu.hidden
             .user-info.clearfix
-                img(src="/images/user_avatar.svg")
+                img(src="{{currentUser.avatar}}")
                 .right
-                    h2 Xavi
+                    h2 {{currentUser.name}}
                     h3 You are currently in Oviedo
 
             .options
@@ -70,6 +70,7 @@ html(class="no-js", lang="en")
         //build:js({.tmp,app}) scripts/scripts.js
         script(src="scripts/app.js")
         script(src="scripts/services/api.js")
+        script(src="scripts/services/user.js")
         script(src="scripts/controllers/main.js")
         script(src="scripts/filters.js")
         script(src="scripts/controllers/detail.js")

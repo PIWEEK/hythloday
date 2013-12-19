@@ -1,8 +1,10 @@
 'use strict';
 var app = {};
 
-app.initApp = function($rootScope, settings) {
-    moment.lang('es');
+app.initApp = function($rootScope, settings, User) {
+    $rootScope.currentUser = User.getCurrentUser();
+
+    window.moment.lang('es');
 
     var baseUrls = {
         'category': '/category/%s',
@@ -51,4 +53,4 @@ angular.module('hythlodayApp', [
             redirectTo: '/'
         });
 })
-.run(['$rootScope', 'settings', app.initApp]);
+.run(['$rootScope', 'settings', 'User', app.initApp]);

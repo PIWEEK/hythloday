@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('hythlodayApp')
-.controller('DetailCtrl', function ($scope, Api, $routeParams) {
+.controller('DetailCtrl', function ($scope, Api, User, $routeParams) {
     var print = function(result) {
         $scope.activity = result;
         $scope.comments = result.comments;
@@ -10,10 +10,10 @@ angular.module('hythlodayApp')
             var data = {
                 activityId: $routeParams.id,
                 text: $scope.comment,
-                userId: 7
+                userId: $scope.currentUser.id
             };
 
-            Api.comment.save(data).$promise.then(function(result) {
+            Api.comment.save(data).$promise.then(function() {
                 load();
             });
         };
