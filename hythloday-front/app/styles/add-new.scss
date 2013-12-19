@@ -1,0 +1,52 @@
+fieldset {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: none;
+}
+
+label {
+    display: block;
+}
+
+input, textarea {
+    border: 0;
+    outline: 0;
+}
+
+.add-new-activity {
+    padding: 25px 4%;
+    font-family: "Roboto";
+    label {
+        font-size: 1rem;
+        &.localization {
+            display: inline;
+        }
+    }
+    input, textarea {
+        font-size: 1.6rem;
+        margin:15px;
+        padding: 5px;
+        border-bottom: 1px solid #CCC;
+        width: 75%;
+        clear: both;
+    }
+    .current-localization {
+        margin-left: 15px;
+        color: darken(#CCC, 30%);
+        text-decoration: none;
+        &:after{
+            content:" ]";
+        }
+        &:before {
+            content:"[ ";
+        }
+    }
+    textarea {
+    }
+    input[type="submit" ] {
+        padding: 15px;
+        background: #ff8800;
+        color: #FFF;
+    }
+}
