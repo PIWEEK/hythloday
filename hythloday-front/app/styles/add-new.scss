@@ -23,13 +23,29 @@ input, textarea {
             display: inline;
         }
     }
-    input, textarea {
+    input, textarea, select {
         font-size: 1.6rem;
         margin:15px;
         padding: 5px;
         border-bottom: 1px solid #CCC;
         width: 75%;
         clear: both;
+        transition: all .3s ease-in;
+        &:focus {
+            border-bottom: 1px solid #ff8800;
+            transition: all .3s ease-in;
+        }
+    }
+    select {
+        border: none;
+        background: #FCFCFC;
+        transition: all .3s ease-in;
+        &:focus {
+            border-bottom: 1px solid #ff8800;
+            transition: all .3s ease-in;
+            outline: none;
+            outline-offset: 0;
+        }
     }
     .current-localization {
         margin-left: 15px;

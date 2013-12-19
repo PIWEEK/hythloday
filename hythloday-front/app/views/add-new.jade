@@ -1,29 +1,33 @@
 .add-new-activity
-    form
+    form.new-activity-form(ng-controller="newActivityCtrl", ng-submit="processForm()")
         fieldset
             label.
                 Título de la actividad
-            input(type="text", placeholder="¿Qué te apetece compartir?", required)
+            input(type="text", name="title", placeholder="¿Qué te apetece compartir?", required)
         fieldset
             label.
                 Fecha
-            input(type="date", required)
+            input(type="date", name="activityDate", required)
+        fieldset
+            label.
+                Categoría
+            select(name="categoryId")
+                option(value="Test") Test
+                #option(ng-repeat="category in categories", value="{{ category.id }}") {{ category.name }}
         fieldset
             label.localization.
                 Localización
             a.current-localization(href="", placeholder="¿Dónde va a suceder esto?", required).
                 Tu localización actual
-            input(list="localization")
+            input(list="localization", ng-model="newActivity.activityLocalization", name="zoneId")
             datalist(id="localization")
                 option(value="Madrid")
                 option(value="Barcelona")
                 option(value="Valencia")
                 option(value="Bilbao")
                 option(value="Sevilla")
-
-        fielset
         fieldset
             label.
                 Descripción
-            textarea(placeholder="Cuéntanos más sobre la actividad", required)
-        input(type="submit")
+            textarea(placeholder="Cuéntanos más sobre la actividad", required, name="description")
+        input(type="submit", id="submit", value="Enviar")
