@@ -30,15 +30,15 @@ html(class="no-js", lang="en")
                 img(src="{{currentUser.avatar}}")
                 .right
                     h2 {{currentUser.name}}
-                    h3 You are currently in Oviedo
+                    h3 You are currently in {{localization}}
 
             .options
                 h2 Options
                 ul
                     li
                         a(href="#") HAZ UNA PROPUESTA
-                    li.geo
-                        a(href="#") LOCALÍZATE [<span>Oviedo</span>]
+                    li.geo(ng-controller="LocalizationCtrl")
+                        a(href="", ng-click="setLocalization()") LOCALÍZATE [<span>{{localization}}</span>]
 
         .wrapper(ng-class='{"menued":sideMenu==true}')
 
@@ -51,7 +51,7 @@ html(class="no-js", lang="en")
                     h1
                         a(href="/#", title="Hythlodæus") Hythlodæus
                     .localization
-                        a(href="", title="localízate", class="localization-btn") Oviedo
+                        a(href="", title="localízate", class="localization-btn") {{localization}}
                             img(src="/images/localization.svg", alt="localizate")
 
                 .container(ng-view="")
@@ -71,6 +71,7 @@ html(class="no-js", lang="en")
         script(src="scripts/app.js")
         script(src="scripts/services/api.js")
         script(src="scripts/services/user.js")
+        script(src="scripts/services/localization.js")
         script(src="scripts/controllers/main.js")
         script(src="scripts/filters.js")
         script(src="scripts/controllers/detail.js")
