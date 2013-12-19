@@ -10,7 +10,7 @@ ul.category-menu.clearfix
           span {{activity.userName}}
       .activity-data
           h2.activity-title
-              a(href="#", title="{{activity.title}}").
+              a(href="{{urls('activity', [activity.id])}}", title="{{activity.title}}").
                   {{activity.title}}
           p.activity-description.
             {{activity.description}}

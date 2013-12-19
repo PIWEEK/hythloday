@@ -8,7 +8,7 @@
   <div ng-repeat="activity in activities" class="single-activity">
     <div class="user-data"><img src="{{activity.userAvatar}}" alt="User Avatar"/><span>{{activity.userName}}</span></div>
     <div class="activity-data">
-      <h2 class="activity-title"><a href="#" title="{{activity.title}}">{{activity.title}}</a></h2>
+      <h2 class="activity-title"><a href="{{urls('activity', [activity.id])}}" title="{{activity.title}}">{{activity.title}}</a></h2>
       <p class="activity-description">{{activity.description}}</p>
       <div ng-if="activity.date" class="activity-time"><img src="/images/clock.png" alt="Horario de la actividad"/><span>
           <La>actividad se desarrollará el <strong> {{activity.date|timelineDate}} </strong></La></span></div>
