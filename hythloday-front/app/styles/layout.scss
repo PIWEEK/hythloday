@@ -161,6 +161,7 @@
 .user-info {
     img {
         float: left;
+        height: 60px;
     }
     .right {
         float: left;
@@ -168,9 +169,8 @@
     }
     h2 {
         color: #ccc;
-        font-size: 30px;
+        font-size: 1.5rem;
         font-weight: normal;
-        line-height: 1.1em;
         margin: 0;
         font-family:"Roboto";
     }
@@ -179,16 +179,19 @@
         margin: 0;
         font-weight: normal;
         font-size: 1rem;
+        font-family:"Roboto";
     }
 }
 
 .options {
     h2 {
         border-bottom: 2px solid #b3b3b3;
-        font-size: 22px;
         padding-bottom: 8px;
         color: #b3b3b3;
         margin: 66px 0 0 0;
+        font-family:"Roboto";
+        font-weight: normal;
+        font-size: 1.1rem;
     }
     ul {
         margin: 0;
@@ -202,14 +205,17 @@
     }
     a {
         color: #e6e6e6;
+        font-family:"Roboto";
         text-decoration: none;
-        font-size: 18px;
-        line-height: 60px;
-        height: 64px;
+        font-size: 1rem;
+        text-transform: uppercase;
         display: block;
-        padding-left: 10px;
-        width: 100%;
         box-sizing: border-box;
-        border-bottom: 1px solid #b3b3b3;
+        border-bottom: 1px solid darken(#b3b3b3, 50%);
+        display: block;
+        padding: 15px 0;
+        span {
+            text-transform:capitalize;
+        }
     }
 }
