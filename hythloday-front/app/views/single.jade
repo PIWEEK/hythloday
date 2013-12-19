@@ -1,7 +1,7 @@
 .single-page.clearfix
     .single-data-top
         .user-data
-            img(src="{{activity.userAvatar}}", alt="User Avatar")
+            img(ng-src="{{activity.userAvatar}}", alt="User Avatar")
             span    {{activity.userName}}
         .activity-data
             h2.activity-title
@@ -18,8 +18,8 @@
             {{comments.length}} comentarios
         .user-comment
             .user-data
-                img(src="/images/user_avatar.svg", alt="User Avatar")
-                span    Username
+                img(ng-src="{{currentUser.avatar}}", alt="User Avatar")
+                span    {{currentUser.name}}
             form.user-comment-input(ng-submit="submitComment()")
                 .comment-area
                     textarea(placeholder="Escribe un comentario", name='text', required, ng-model='comment')
@@ -27,7 +27,7 @@
         .other-comments
             .single-other-comment(ng-repeat="comment in comments")
                 .user-avatar
-                    img(src="{{comment.userAvatar}}", alt="User Avatar")
+                    img(ng-src="{{comment.userAvatar}}", alt="User Avatar")
                 .user-comment-text
                     p.user-data
                         <strong>{{comment.userName}}</strong> hace {{comment.date|commentDate}}
