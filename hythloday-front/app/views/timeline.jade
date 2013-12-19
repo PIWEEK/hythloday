@@ -1,10 +1,7 @@
 ul.category-menu.clearfix
-  li.selected 
+  li(ng-repeat="category in categories", ng-class="{selected: category.selected}", ng-cloak)
     div
-      a Hola
-  li
-    div
-      a adios
+      a(href="{{urls('category', [category.id])}}") {{category.name}}
 
 .single-activity.clearfix.content-wrapper
     .user-data
