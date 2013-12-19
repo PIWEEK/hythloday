@@ -1,0 +1,29 @@
+.add-new-activity
+    form
+        fieldset
+            label.
+                Título de la actividad
+            input(type="text", placeholder="¿Qué te apetece compartir?", required)
+        fieldset
+            label.
+                Fecha
+            input(type="date", required)
+        fieldset
+            label.localization.
+                Localización
+            a.current-localization(href="", placeholder="¿Dónde va a suceder esto?", required).
+                Tu localización actual
+            input(list="localization")
+            datalist(id="localization")
+                option(value="Madrid")
+                option(value="Barcelona")
+                option(value="Valencia")
+                option(value="Bilbao")
+                option(value="Sevilla")
+
+        fielset
+        fieldset
+            label.
+                Descripción
+            textarea(placeholder="Cuéntanos más sobre la actividad", required)
+        input(type="submit")
