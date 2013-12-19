@@ -25,7 +25,7 @@ html(class="no-js", lang="en")
 
     body(ng-app="hythlodayApp")
 
-        .menu.hidden
+        .menu(ng-show="sideMenu")
             .user-info.clearfix
                 img(src="{{currentUser.avatar}}")
                 .right
@@ -40,13 +40,13 @@ html(class="no-js", lang="en")
                     li.geo
                         a(href="#") LOCALÍZATE [<span>Oviedo</span>]
 
-        .wrapper
+        .wrapper(ng-class='{"menued":sideMenu==true}')
 
             .perspective
 
                 .top-bar.clearfix
 
-                    a(href="", class="menu-btn")
+                    a(href="", class="menu-btn", ng-click="sideMenu = !sideMenu", ng-class='{"active":sideMenu==true}')
                         span.lines
                     h1
                         a(href="/#", title="Hythlodæus") Hythlodæus

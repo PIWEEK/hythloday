@@ -15,7 +15,7 @@
         left: 15px;
         top: 2px;
         transition: all .1s ease-out;
-        &:hover {
+        &:hover, &.active {
             span{
                 display: block;
                 height: $lines-height;
@@ -137,12 +137,11 @@
     transition: all .2s ease-out;
     &.menued {
         @include perspective( 1500px );
-        transition: all .2s ease-out;
+        transition: all .3s ease-out;
         .perspective {
             @include transform( translateZ(-150px) translateX(28%) translateY(-5%) rotateY(-30deg) scale(1.3) );
-            transition: all .2s ease-out;
+            transition: all .3s ease-out;
         }
-
     }
 }
 
