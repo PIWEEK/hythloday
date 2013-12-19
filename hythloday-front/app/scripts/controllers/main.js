@@ -44,7 +44,7 @@ angular.module('hythlodayApp')
         $scope.zones = zones;
     });
 
-    var now = moment().format("YYYY-MM-DD");
+    var now = moment().format('YYYY-MM-DD');
     $scope.date = now;
 
     $scope.processForm = function() {
@@ -62,6 +62,14 @@ angular.module('hythlodayApp')
     var latitude = 40.4167754;
     var longitude = -3.7037902;
 
+    Localization.get(latitude, longitude)
+    .success(function(data) {
+        $rootScope.localization = data.results[0].address_components[2].long_name;
+    })
+    .error(function() {
+        $rootScope.localization = '?';
+    });
+
     $scope.setLocalization = function() {
 
         Localization.get(latitude, longitude)
@@ -76,3 +84,4 @@ angular.module('hythlodayApp')
     //     $scope.localization = '?';
     // }
 });
+

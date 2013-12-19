@@ -7,7 +7,7 @@ angular.module('hythlodayApp')
 
         user.id = 7;
         user.avatar = 'http://localhost:8080/web-images/avatar/default_avatar.png';
-        user.name = "Luis";
+        user.name = 'Luis';
 
         return {
             getCurrentUser: function() {
