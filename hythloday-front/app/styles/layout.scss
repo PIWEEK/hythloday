@@ -142,7 +142,7 @@
         @include perspective( 1500px );
         transition: all .3s ease-out;
         .perspective {
-            @include transform( translateZ(-150px) translateX(28%) translateY(-5%) rotateY(-30deg) scale(1.3) );
+            @include transform( translateX(30%) scale(1) );
             transition: all .3s ease-out;
         }
     }
