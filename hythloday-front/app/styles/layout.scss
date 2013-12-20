@@ -1,6 +1,7 @@
 @import "compass/css3";
 @import "compass/css3/box-shadow";
 @import "compass/css3/transform";
+@import "compass/css3/transition";
 
 .top-bar {
     background-color: #ff8800;
@@ -137,13 +138,20 @@
 }
 
 .wrapper {
-    transition: all .2s ease-out;
+  @include transition-property(all);
+  @include transition-duration(.5s);
+  @include transition-timing-function(ease-out);
+  @include translate3d(0, 0, 0);
     &.menued {
         @include perspective( 1500px );
-        transition: all .3s ease-out;
+        @include transition-property(all);
+        @include transition-duration(.5s);
+        @include transition-timing-function(ease-out);
         .perspective {
-            @include transform( translateX(30%) scale(1) );
-            transition: all .3s ease-out;
+          @include transition-property(all);
+          @include transition-duration(.5s);
+          @include transition-timing-function(ease-out);
+          @include translate3d(30%, 0, 0);
         }
     }
 }
