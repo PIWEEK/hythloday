@@ -12,8 +12,7 @@ ul.category-menu.clearfix
           h2.activity-title
               a(ng-click="go('activity', [activity.id])", title="{{activity.title}}").
                   {{activity.title}}
-          p.activity-description.
-            {{activity.description}}
+          p.activity-description {{activity.description}}
           .activity-time(ng-if="activity.date")
               img(src="/images/clock.png", alt="Horario de la actividad")
               
