@@ -1,15 +1,21 @@
 'use strict';
 var app = {};
 
-app.initApp = function($rootScope, settings, User) {
+app.initApp = function($rootScope, $location, settings, User) {
     $rootScope.currentUser = User.getCurrentUser();
 
     window.moment.lang('es');
 
     var baseUrls = {
+        'home': '/',
         'category': '/category/%s',
         'activity': '/activity/%s',
         'newActivity': '/new-activity'
+    };
+
+    $rootScope.go = function(urlName, params) {
+        var url = $rootScope.urls(urlName, params);
+        $location.path(url);
     };
 
     $rootScope.urls = function(urlName, params) {
@@ -32,11 +38,12 @@ angular.module('hythlodayApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'ngTouch'
 ])
 .constant('settings', {
-    'remoteHost': 'http://localhost:8080',
-    'host': 'http://localhost:9000/#'
+    'remoteHost': 'http://192.168.1.38:8080',
+    'host': ''
 })
 .config(function ($routeProvider) {
     $routeProvider
@@ -59,4 +66,4 @@ angular.module('hythlodayApp', [
             redirectTo: '/'
         });
 })
-.run(['$rootScope', 'settings', 'User', app.initApp]);
+.run(['$rootScope', '$location', 'settings', 'User', app.initApp]);

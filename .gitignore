@@ -15,7 +15,7 @@
 /*/eclipse
 /*/ivy*
 /*/*.zip
-/*/plugins
+hythloday-back/*/plugins
 /*/web-app/plugins
 /*/web-app/WEB-INF/*
 .metadata
@@ -27,10 +27,9 @@ DataSource.groovy
 grails-base-common.properties
 web-images
 grails-base-config.properties
-/hythloday-mobile/merges/
-/hythloday-mobile/platforms/
-/hythloday-mobile/plugins/
 npm-debug.log
 *.css
 *.html
 *.swp
+bower_components
+hythloday-mobile/*

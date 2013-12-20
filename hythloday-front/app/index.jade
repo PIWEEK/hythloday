@@ -7,17 +7,9 @@ html(class="no-js", lang="en")
     head
         title   Hythloday
         meta(charset='utf-8')
-        meta(name="description", content="For intrepid travellers who want to discover a different way to visit a country or a city this application let know activities proposed by other travellers")
-        meta (name="HandheldFriendly", content="True")
-        meta(name="MobileOptimized", content="320")
-        meta(name="viewport", content="width=device-width, initial-scale=1")
-        meta(meta http-equiv="cleartype", content="on")
 
-        link(rel="apple-touch-icon-precomposed", sizes="144x144", href="img/touch/apple-touch-icon-144x144-precomposed.png")
-        link(rel="apple-touch-icon-precomposed", sizes="114x114", href="img/touch/apple-touch-icon-114x114-precomposed.png")
-        link(rel="apple-touch-icon-precomposed", sizes="72x72", href="img/touch/apple-touch-icon-72x72-precomposed.png")
-        link(rel="apple-touch-icon-precomposed", href="img/touch/apple-touch-icon-57x57-precomposed.png")
-        link(rel="shortcut icon", href="img/touch/apple-touch-icon.png")
+        meta(name="viewport", content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no")
+        meta(name="apple-mobile-web-app-capable", content="yes")
 
         // build:css({.tmp,app}) styles/main.css
         link(rel='stylesheet', href='styles/main.css')
@@ -27,7 +19,7 @@ html(class="no-js", lang="en")
 
         .menu(ng-show="sideMenu")
             .user-info.clearfix
-                img(src="{{currentUser.avatar}}")
+                img(ng-src="{{currentUser.avatar}}")
                 .right
                     h2 {{currentUser.name}}
                     h3 You are currently in {{localization}}
@@ -36,7 +28,7 @@ html(class="no-js", lang="en")
                 h2 Options
                 ul
                     li
-                        a(href="{{urls('newActivity')}}") HAZ UNA PROPUESTA
+                        a(ng-click="go('newActivity')") HAZ UNA PROPUESTA
                     li.geo(ng-controller="LocalizationCtrl")
                         a(href="", ng-click="setLocalization()") LOCALÍZATE [<span>{{localization}}</span>]
 
@@ -49,7 +41,7 @@ html(class="no-js", lang="en")
                     a(href="", class="menu-btn", ng-click="sideMenu = !sideMenu", ng-class='{"active":sideMenu==true}')
                         span.lines
                     h1
-                        a(href="/#", title="Hythlodæus") Hythlodæus
+                        a(ng-click="go('home')", title="Hythlodæus") Hythlodæus
                     .localization
                         a(href="", title="localízate", class="localization-btn") {{localization}}
                             img(src="/images/localization.svg", alt="localizate")
@@ -65,6 +57,7 @@ html(class="no-js", lang="en")
         script(src="bower_components/angular-cookies/angular-cookies.js")
         script(src="bower_components/angular-sanitize/angular-sanitize.js")
         script(src="bower_components/angular-route/angular-route.js")
+        script(src="bower_components/angular-touch/angular-touch.js")
         //endbuild
 
         //build:js({.tmp,app}) scripts/scripts.js
@@ -72,7 +65,9 @@ html(class="no-js", lang="en")
         script(src="scripts/services/api.js")
         script(src="scripts/services/user.js")
         script(src="scripts/services/localization.js")
-        script(src="scripts/controllers/main.js")
-        script(src="scripts/filters.js")
+        script(src="scripts/controllers/timeline.js")
         script(src="scripts/controllers/detail.js")
+        script(src="scripts/controllers/localization.js")
+        script(src="scripts/controllers/newActivity.js")
+        script(src="scripts/filters.js")
         //endbuild
