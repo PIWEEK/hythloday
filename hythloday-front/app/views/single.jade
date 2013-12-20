@@ -10,7 +10,7 @@
                     img(src="/images/clock.png", alt="Horario de la actividad")
                     span
                         La actividad se desarrollará el <strong> {{activity.date|timelineDate}}</strong>
-            p.activity-description {{activity.description}}
+            p.activity-description(ng-bind-html="activity.description|nl2br")
 
     .single-comments
         .comments-num.
@@ -30,4 +30,4 @@
                 .user-comment-text
                     p.user-data
                         <strong>{{comment.userName}}</strong> {{comment.date|commentDate}}
-                    p.comment {{comment.text}}
+                    p.comment(ng-bind-html="comment.text|nl2br")

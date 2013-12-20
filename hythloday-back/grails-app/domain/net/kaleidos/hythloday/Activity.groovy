@@ -21,6 +21,6 @@ class Activity {
 
     static mapping = {
         version false
-        text type: "text"
+        description type: "text"
     }
 }

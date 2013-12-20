@@ -5,7 +5,7 @@ angular.module('hythlodayApp')
     .factory('User', function () {
         var user = {};
 
-        user.id = 16;
+        user.id = 15;
         user.avatar = 'http://localhost:8080/web-images/avatar/user_avatar10.png';
         user.name = 'Hannah Montana';
 
