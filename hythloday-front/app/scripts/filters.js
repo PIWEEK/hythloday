@@ -8,6 +8,6 @@ angular.module('hythlodayApp')
     })
     .filter('commentDate', function () {
         return function(input) {
-            return window.moment(input, 'YYYY-MM-DD hh:mm:ss').startOf('hour').fromNow();
+            return window.moment(input, 'YYYY-MM-DD hh:mm:ss').startOf('second').fromNow();
         };
     });
