@@ -14,6 +14,8 @@ app.initApp = function($rootScope, $location, settings, User) {
     };
 
     $rootScope.go = function(urlName, params) {
+        $rootScope.sideMenu = false;
+
         var url = $rootScope.urls(urlName, params);
         $location.path(url);
     };
