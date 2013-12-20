@@ -41,10 +41,7 @@ angular.module('hythlodayApp', [
     'ngRoute',
     'ngTouch'
 ])
-.constant('settings', {
-    'remoteHost': 'http://192.168.1.38:8080',
-    'host': ''
-})
+.constant('settings', appSettings)
 .config(function ($routeProvider) {
     $routeProvider
         .when('/', {

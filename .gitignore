@@ -33,3 +33,4 @@ npm-debug.log
 *.swp
 bower_components
 hythloday-mobile/*
+hythloday-front/app/scripts/app-settings.js
