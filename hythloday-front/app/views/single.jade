@@ -6,9 +6,9 @@
         .activity-data
             h2.activity-title
               {{activity.title}}
-            .activity-time
+            .activity-time(ng-if="activity.date")
                     img(src="/images/clock.png", alt="Horario de la actividad")
-                    span(ng-if="timelineDate")
+                    span
                         La actividad se desarrollará el <strong> {{activity.date|timelineDate}}</strong>
             p.activity-description {{activity.description}}
 
