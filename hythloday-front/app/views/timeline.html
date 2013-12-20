@@ -5,10 +5,10 @@
   </li>
 </ul>
 <div class="clearfix content-wrapper">
-  <div ng-repeat="activity in activities" class="single-activity">
+  <div ng-repeat="activity in activities" ng-click="go('activity', [activity.id])" class="single-activity">
     <div class="user-data"><img ng-src="{{activity.userAvatar}}" alt="User Avatar"/><span>{{activity.userName}}</span></div>
     <div class="activity-data">
-      <h2 class="activity-title"><a ng-click="go('activity', [activity.id])" title="{{activity.title}}">{{activity.title}}</a></h2>
+      <h2 class="activity-title"><a>{{activity.title}}</a></h2>
       <p ng-bind-html="activity.description|nl2br" class="activity-description"></p>
       <div ng-if="activity.date" class="activity-time"><img src="/images/clock.png" alt="Horario de la actividad"/><span>
           <La>actividad se desarrollará el <strong> {{activity.date|timelineDate}} </strong></La></span></div>

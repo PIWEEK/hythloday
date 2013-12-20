@@ -6,7 +6,7 @@ angular.module('hythlodayApp')
         var user = {};
 
         user.id = 15;
-        user.avatar = 'http://localhost:8080/web-images/avatar/user_avatar10.png';
+        user.avatar = 'http://10.8.1.171:8080/web-images/avatar/user_avatar10.png';
         user.name = 'Hannah Montana';
 
         return {

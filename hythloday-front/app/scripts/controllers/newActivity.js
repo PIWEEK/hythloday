@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('hythlodayApp')
-    .controller('newActivityCtrl', function($scope, $http, $location, Api, moment) {
+    .controller('newActivityCtrl', function($scope, $http, $location, Api) {
 
         Api.category.query().$promise.then(function(categories) {
             $scope.categories = categories;
