@@ -6,10 +6,7 @@
       <h2 class="activity-title">{{activity.title}}</h2>
       <div class="activity-time"><img src="/images/clock.png" alt="Horario de la actividad"/><span ng-if="timelineDate">
           <La>actividad se desarrollará el <strong> {{activity.date|timelineDate}}</strong></La></span></div>
-      <p class="activity-description">
-        {{activity.description}}
-        
-      </p>
+      <p class="activity-description">{{activity.description}}</p>
     </div>
   </div>
   <div class="single-comments">
@@ -27,7 +24,7 @@
       <div ng-repeat="comment in comments" class="single-other-comment">
         <div class="user-avatar"><img ng-src="{{comment.userAvatar}}" alt="User Avatar"/></div>
         <div class="user-comment-text">
-          <p class="user-data"><strong>{{comment.userName}}</strong> hace {{comment.date|commentDate}}</p>
+          <p class="user-data"><strong>{{comment.userName}}</strong> {{comment.date|commentDate}}</p>
           <p class="comment">{{comment.text}}</p>
         </div>
       </div>
