@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('hythlodayApp')
-    .controller('newActivityCtrl', function($scope, $http, $location, Api) {
+    .controller('newActivityCtrl', function($scope, $http, $location, Api, moment) {
 
         Api.category.query().$promise.then(function(categories) {
             $scope.categories = categories;
@@ -20,13 +20,13 @@ angular.module('hythlodayApp')
 
             data.title = form.title;
             data.date = form.date;
-            data.categoryId = form.category.id
-            data.zoneId = form.zone.id
-            data.description = form.description
-            data.userId = $scope.currentUser.id
+            data.categoryId = form.category.id;
+            data.zoneId = form.zone.id;
+            data.description = form.description;
+            data.userId = $scope.currentUser.id;
 
-            Api.activity.save(data).$promise.then(function(result) {
-                $location.path( "/#" )
+            Api.activity.save(data).$promise.then(function() {
+                $location.path( '/#' );
             });
         };
     });
